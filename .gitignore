@@ -3,6 +3,3 @@ composer.lock
 *.log
 runtime
 public/upload/*
-application/common
-application/index
-application/user

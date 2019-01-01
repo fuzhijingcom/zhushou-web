@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <title>管理首页</title>
+    <link rel="stylesheet" href="/public/assets/css/weui.min.css" />
+    <script type="text/javascript" src="/public/assets/js/jquery-1.10.2.min.js"></script>
+</head>
+
+<style>
+    .page {
+        overflow-y: auto;
+        z-index: 1;
+    }
+
+    .page__hd {
+        padding: 20px;
+    }
+
+    .page__hd p {
+        display: block;
+        margin-block-start: 1em;
+        margin-block-end: 1em;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+    }
+
+    .page__title {
+        text-align: left;
+        font-size: 20px;
+        font-weight: 400;
+    }
+    .weui-grid{
+        width: 25%;
+    }
+</style>
+
+<body>
+
+    <div class="page">
+        <div class="page__hd">
+            <h1 class="page__title">管理平台首页</h1>
+            <p class="page__desc">账号ID：{$seller_id} <a href="/index.php/user/login/logout">退出登录</a></p>
+            <p class="page__desc">所属学校：{$schoolname}</p>
+        </div>
+        <div class="weui-grids" >
+
+            <a href="javascript:;" class="weui-grid">
+                <div class="weui-grid__icon">
+                    <img src="https://api5.c3w.cc/public/icon/sitting.png" alt="店铺设置">
+                </div>
+                <p class="weui-grid__label">店铺设置</p>
+            </a>
+            <a href="javascript:;" class="weui-grid">
+                <div class="weui-grid__icon">
+                    <img src="https://api5.c3w.cc/public/icon/goods.png" alt="商品列表">
+                </div>
+                <p class="weui-grid__label">商品列表</p>
+            </a>
+            <a href="javascript:;" class="weui-grid">
+                <div class="weui-grid__icon">
+                    <img src="https://api5.c3w.cc/public/icon/order.png" alt="订单管理">
+                </div>
+                <p class="weui-grid__label">订单管理</p>
+            </a> 
+            <a href="javascript:;" class="weui-grid">
+                <div class="weui-grid__icon">
+                    <img src="https://api5.c3w.cc/public/icon/money.png" alt="">
+                </div>
+                <p class="weui-grid__label">资金流水</p>
+            </a>
+
+        </div>
+    </div>
+
+</body>
+
+</html>
