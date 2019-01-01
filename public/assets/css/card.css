@@ -1,0 +1,36 @@
+.header{
+    display: flex;justify-content: center;
+}
+.header-content{
+    width:90%;
+    height:180px;
+    background:#EDDDB9;
+    border-radius: 10px;
+    margin-top:20px;
+    color:#57441A;
+    box-shadow: 0px 0px 10px 0px #EDDDB9;
+}
+.header-block{
+    display: flex;align-items: center;padding:25px 20px;
+}
+.header-img{
+    width:60px;height:60px;border-radius: 50%;
+}
+.header-nickname{
+    padding-left:15px;
+}
+.content-footer{
+    display: flex;justify-content: space-between;
+}
+.integration{
+    display: flex;flex-direction: column;width:50%;text-align: center;border-right:1px solid #DECEAA;
+}
+.vip{
+    display: flex;flex-direction:column;width:50%;text-align: center;
+}
+.data{
+    color:#999999;display: flex;justify-content: space-between;height:50px;background:#FFFFFF;align-items: center;margin-top:20px;padding:0px 20px;
+}
+.download{
+    color:#999999;display: flex;justify-content: space-between;height:50px;background:#FFFFFF;align-items: center;margin-top:10px;padding:0px 20px;
+}

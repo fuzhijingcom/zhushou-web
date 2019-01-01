@@ -1,0 +1,28 @@
+.portrait{
+    display:flex;justify-content: center;text-align: center;height:300px;align-items: center;background: #ffffff;border-bottom: #333333;
+}
+.portrait-img{
+    width:80px;height:80px;border-radius: 50%;
+}
+.portrait-font{
+    font-size: 16px;padding: 20px;color:#333333;
+}
+.module-font{
+    font-size: 16px;color:#333333;
+}
+.module{
+    margin-top:20px;
+}
+.module-1{
+    display: flex;justify-content: space-between;height:50px;background: #ffffff;border-bottom:1px solid #EEEEEE;align-items:center;padding:0px 15px;
+}
+.module-img{
+    width:20px;height:20px;
+}
+.module-a{
+    color:#333333;
+    text-decoration: none;
+}
+.img-module{
+    display: flex;flex-direction: column;align-items: center;
+}
