@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <title>设置首页</title>
+    <link rel="stylesheet" href="/public/assets/css/weui.min.css" />
+    <link rel="stylesheet" href="/public/assets/css/weui.pagehd.css" />
+    <script type="text/javascript" src="/public/assets/js/jquery-1.10.2.min.js"></script>
+</head>
+
+
+
+<body>
+
+    <div class="page">
+
+        <div class="page__hd">
+            <h1 class="page__title">店铺设置</h1>
+            <p class="page__desc">设置店铺基本信息</p>
+        </div>
+
+
+        <div class="weui-cells__title">店铺信息设置</div>
+        <div class="weui-cells weui-cells_form">
+            <div class="weui-cell">
+                <div class="weui-cell__hd"><label class="weui-label">店铺名称</label></div>
+                <div class="weui-cell__bd">
+                    <input class="weui-input" type="text" placeholder="请输入店铺名称" value="{$data.seller_name}" />
+                </div>
+            </div>
+        </div>
+
+        <div class="weui-cells__title">手机号码</div>
+        <div class="weui-cells weui-cells_form">
+            <div class="weui-cell">
+                <div class="weui-cell__hd"><label class="weui-label">电话号码</label></div>
+                <div class="weui-cell__bd">
+                    <input class="weui-input" type="text" placeholder="请输入电话号码" value="{$data.phone}" />
+                </div>
+            </div>
+        </div>
+        
+        <div class="weui-msg__opr-area">
+            <p class="weui-btn-area">
+                <a href="" class="weui-btn weui-btn_primary">确认修改</a>
+            </p>
+        </div>
+
+    </div>
+
+
+</body>
+
+</html>

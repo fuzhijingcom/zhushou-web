@@ -1,14 +1,12 @@
 <?php
-namespace app\index\controller;
+namespace app\shop\controller;
 
 use think\Controller;
 
-class Index extends Controller
+class Config extends Controller
 {
-
     public function _initialize()
     {
-
         //检查是否登录
         if ($this->request->action() != 'logout') {
             //排除 logout
@@ -23,11 +21,19 @@ class Index extends Controller
         $seller_id = session("seller_id");
         $schoolname = session("schoolname");
 
-        $this->assign('token', $token);
-        $this->assign('seller_id', $seller_id);
-        $this->assign('schoolname', $schoolname);
+        $url = CONFIG('api5_url')."school/admin/get_shop_config?seller_id=".$seller_id;
+        $res = httpRequest($url,'GET');
+        if(!$res){
+            $this->error('请求出错');
+        }
+        $res = json_decode($res,true);
+        if($res['status'] == 1){
+            $data = $res['data'];
+        }else{
+            $this->error($res['msg']);
+        }
 
+        $this->assign('data', $data);
         return $this->fetch();
     }
-
 }
