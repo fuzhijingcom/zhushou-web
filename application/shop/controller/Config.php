@@ -36,4 +36,16 @@ class Config extends Controller
         $this->assign('data', $data);
         return $this->fetch();
     }
+
+    /**
+     * edit
+     */
+    public function edit(){
+        
+
+
+
+
+    }
+
 }

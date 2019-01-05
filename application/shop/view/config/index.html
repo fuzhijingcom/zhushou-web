@@ -21,53 +21,69 @@
             <p class="page__desc">设置店铺基本信息</p>
         </div>
 
+        <form method="POST" action="/index.php/shop/config/edit">
 
-        <div class="weui-cells__title">店铺信息设置</div>
-        <div class="weui-cells weui-cells_form">
-            <div class="weui-cell">
-                <div class="weui-cell__hd"><label class="weui-label">店铺名称</label></div>
-                <div class="weui-cell__bd">
-                    <input class="weui-input" type="text" placeholder="请输入店铺名称" value="{$data.seller_name}" />
+            <div class="weui-cells__title">店铺信息设置</div>
+            <div class="weui-cells weui-cells_form">
+                <div class="weui-cell">
+                    <div class="weui-cell__hd"><label class="weui-label">店铺名称</label></div>
+                    <div class="weui-cell__bd">
+                        <input class="weui-input" type="text" placeholder="请输入店铺名称" name="seller_name" value="{$data.seller_name}" />
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <div class="weui-cells__title">手机号码</div>
-        <div class="weui-cells weui-cells_form">
-            <div class="weui-cell">
-                <div class="weui-cell__hd"><label class="weui-label">电话号码</label></div>
-                <div class="weui-cell__bd">
-                    <input class="weui-input" type="text" placeholder="请输入电话号码" value="{$data.phone}" />
+            <div class="weui-cells__title">手机号码</div>
+            <div class="weui-cells weui-cells_form">
+                <div class="weui-cell">
+                    <div class="weui-cell__hd"><label class="weui-label">电话号码</label></div>
+                    <div class="weui-cell__bd">
+                        <input class="weui-input" type="text" placeholder="请输入电话号码" name="phone" value="{$data.phone}" />
+                    </div>
                 </div>
             </div>
-        </div>
-        
 
-        <div class="weui-cells__title">配送设置</div>
-        <div class="weui-cells weui-cells_form">
-            <div class="weui-cell">
-                <div class="weui-cell__hd"><label class="weui-label">配送费</label></div>
-                <div class="weui-cell__bd">
-                    <input class="weui-input" type="text" placeholder="请输入电话号码" value="{$data.delivery_fee}" />
+            <div class="weui-cells__title">营业时间</div>
+            <div class="weui-cells weui-cells_form">
+                <div class="weui-cell">
+                    <div class="weui-cell__hd"><label class="weui-label">开始时间</label></div>
+                    <div class="weui-cell__bd">
+                        <input class="weui-input" type="text" placeholder="请输入开始时间" name="start_sell_time" value="{$data.start_sell_time}" />
+                    </div>
+                </div>
+                <div class="weui-cell">
+                    <div class="weui-cell__hd"><label class="weui-label">结束时间</label></div>
+                    <div class="weui-cell__bd">
+                        <input class="weui-input" type="text" placeholder="请输入结束时间" name="end_sell_time" value="{$data.end_sell_time}" />
+                    </div>
                 </div>
             </div>
-            <div class="weui-cell">
-                <div class="weui-cell__hd"><label class="weui-label">起送</label></div>
-                <div class="weui-cell__bd">
-                    <input class="weui-input" type="text" placeholder="请输入电话号码" value="{$data.min_price}" />
+
+            <div class="weui-cells__title">配送设置</div>
+            <div class="weui-cells weui-cells_form">
+                <div class="weui-cell">
+                    <div class="weui-cell__hd"><label class="weui-label">配送费</label></div>
+                    <div class="weui-cell__bd">
+                        <input class="weui-input" type="text" placeholder="请输入电话号码" name="delivery_fee" value="{$data.delivery_fee}" />
+                    </div>
+                </div>
+                <div class="weui-cell">
+                    <div class="weui-cell__hd"><label class="weui-label">起送</label></div>
+                    <div class="weui-cell__bd">
+                        <input class="weui-input" type="text" placeholder="请输入电话号码" name="min_price" value="{$data.min_price}" />
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <div class="weui-msg__opr-area">
-            <p class="weui-btn-area">
-                <a href="" class="weui-btn weui-btn_primary">确认修改</a>
-            </p>
-        </div>
+            <div class="weui-msg__opr-area">
+                <p class="weui-btn-area">
+                    <button type="submit" class="weui-btn weui-btn_primary">确认修改</button>
+                </p>
+            </div>
+
+        </form>
 
     </div>
-
-
 </body>
 
 </html>
