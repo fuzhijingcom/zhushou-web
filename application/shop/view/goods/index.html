@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <title>商品列表</title>
+    <link rel="stylesheet" href="/public/assets/css/weui.min.css" />
+    <link rel="stylesheet" href="/public/assets/css/weui.pagehd.css" />
+    <script type="text/javascript" src="/public/assets/js/jquery-1.10.2.min.js"></script>
+</head>
+
+
+
+<body>
+
+    <div class="page">
+
+        <div class="page__hd">
+            <h1 class="page__title">商品列表</h1>
+            <p class="page__desc">总商品数：{$data|count}</p>
+        </div>
+
+        <div class="page__bd">
+            <div class="weui-panel weui-panel_access">
+                <div class="weui-panel__hd">商品列表</div>
+                <div class="weui-panel__bd">
+                    {foreach name="data" item="vo"}
+                    <a href="javascript:void(0);" class="weui-media-box weui-media-box_appmsg">
+                        <div class="weui-media-box__hd">
+                            <img class="weui-media-box__thumb" src="{$vo.pic_url}"
+                                alt="">
+                        </div>
+                        <div class="weui-media-box__bd">
+                            <h4 class="weui-media-box__title">{$vo.goods_name}</h4>
+                            <p class="weui-media-box__desc">{$vo.detail}</p>
+                        </div>
+                    </a>
+                    <div class="weui-panel__ft">
+                        <a href="/index.php/shop/goods/edit?goods_id={$vo.goods_id}" class="weui-cell weui-cell_access weui-cell_link">
+                            <div class="weui-cell__bd">售价￥{$vo.price}，包装费￥{$vo.packing_fee}，库存{$vo.stock}</div>
+                            <span class="weui-cell__ft">编辑?</span>
+                        </a>    
+                    </div>
+                    {/foreach}
+                </div>
+            </div>
+        </div>
+
+        <div class="weui-msg__opr-area">
+            <p class="weui-btn-area">
+                <a href="" class="weui-btn weui-btn_primary">新增商品</a>
+            </p>
+        </div>
+
+    </div>
+</body>
+
+</html>
