@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <title>菜单列表</title>
+    <link rel="stylesheet" href="/public/assets/css/weui.min.css" />
+    <link rel="stylesheet" href="/public/assets/css/weui.pagehd.css" />
+    <script type="text/javascript" src="/public/assets/js/jquery-1.10.2.min.js"></script>
+</head>
+
+
+
+<body>
+
+    <div class="page">
+
+        <div class="page__hd">
+            <h1 class="page__title">菜单列表</h1>
+            <p class="page__desc">点击编辑可以修改名称</p>
+        </div>
+
+        <div class="weui-cells__title">菜单列表</div>
+        <div class="weui-cells">
+
+            {foreach name="data" item="vo"}
+                <a class="weui-cell weui-cell_access" href="javascript:;">
+                    <div class="weui-cell__bd">
+                        <p>{$vo.menu_name}</p>
+                    </div>
+                    <div class="weui-cell__ft" style="color:blue;">编辑</div>
+                </a>
+
+                {foreach name="$vo.goods_list" item="v"}
+                <a class="weui-cell weui-cell_access" href="javascript:;">
+                    <div class="weui-cell__bd">
+                        <p style="padding-left:20px;">{$v.goods_name}</p>
+                    </div>
+                    <div class="weui-cell__ft"></div>
+                </a>
+                {/foreach}
+
+            {/foreach}
+
+        </div>
+
+
+        <div class="weui-msg__opr-area">
+            <p class="weui-btn-area">
+                <a href="/index.php/shop/menu/add" class="weui-btn weui-btn_primary">新增分类</a>
+            </p>
+        </div>
+
+    </div>
+
+</body>
+
+</html>

@@ -96,5 +96,39 @@ class Goods extends Controller
         }
     }
 
+    /**
+     * 增加商品
+     */
+    public function add(){
+        return $this->fetch();
+    }
+    /**
+     * 新增 post
+     */
+    public function add_post(){
+       
+        $goods_name = input('goods_name');
+        $price=input('price');
+        $packing_fee=input('packing_fee');
+        $sales=input('sales');
+        $stock=input('stock');
+        $detail=input('detail');
+
+        $url = CONFIG('api5_url')."school/admin/goods_add?goods_name=".$goods_name."&price=".$price."&packing_fee=".$packing_fee."&sales=".$sales."&stock=".$stock."&detail=".$detail;
+        $res = httpRequest($url,'GET');
+      
+        $res = json_decode($res,true);
+       
+        if(!$res){
+            $this->error('请求出错');
+        }
+      
+        if($res['status'] == 1){
+            $this->success($res['msg'],'index');
+        }else{
+            $this->error($res['msg']);
+        }
+        
+    }
 
 }
