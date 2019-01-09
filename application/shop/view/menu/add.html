@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <title>增加分类</title>
+    <link rel="stylesheet" href="/public/assets/css/weui.min.css" />
+    <link rel="stylesheet" href="/public/assets/css/weui.pagehd.css" />
+    <script type="text/javascript" src="/public/assets/js/jquery-1.10.2.min.js"></script>
+</head>
+
+
+
+<body>
+
+    <div class="page">
+
+        <div class="page__hd">
+            <h1 class="page__title">增加分类</h1>
+            <p class="page__desc">新增一个新的分类</p>
+        </div>
+
+        <form method="POST">
+           
+            <div class="weui-cells__title">增加分类基本信息</div>
+            <div class="weui-cells weui-cells_form">
+                <div class="weui-cell">
+                    <div class="weui-cell__hd"><label class="weui-label">分类名称</label></div>
+                    <div class="weui-cell__bd">
+                        <input class="weui-input" type="text" placeholder="请输入商品名称" name="menu_name"  />
+                    </div>
+                </div>
+            </div>
+
+            <div class="weui-cells__title">数字越大越在前面</div>
+            <div class="weui-cells weui-cells_form">
+                <div class="weui-cell">
+                    <div class="weui-cell__hd"><label class="weui-label">排序</label></div>
+                    <div class="weui-cell__bd">
+                        <input class="weui-input" type="text" placeholder="请输入排序" name="sort" value="0"/>
+                    </div>
+                </div>
+            </div>
+
+            <div class="weui-msg__opr-area">
+                <p class="weui-btn-area">
+                    <button type="submit" class="weui-btn weui-btn_primary">保存</button>
+                </p>
+            </div>
+
+        </form>
+
+    </div>
+</body>
+
+</html>

@@ -51,6 +51,28 @@ class Menu extends Controller
      * 增加分类
      */
     public function add(){
+
+        $seller_id = session("seller_id");
+
+        if($this->request->method() == "POST"){
+            $menu_name = input('menu_name');
+            $sort = input('sort');
+
+            $url = CONFIG('api5_url')."school/admin/add_menu?seller_id=".$seller_id."&menu_name=".$menu_name."&sort=".$sort;
+            $res = httpRequest($url,'GET');
+            if(!$res){
+                $this->error('请求出错');
+            }
+            $res = json_decode($res,true);
+            
+            if($res['status'] == 1){
+                $this->success($res['msg'],'index');
+            }else{
+                $this->error($res['msg']);
+            }
+            exit;
+        }
+        
         return $this->fetch();
     }
 
