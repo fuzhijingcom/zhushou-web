@@ -8,38 +8,35 @@
     <link rel="stylesheet" href="/public/assets/css/weui.min.css" />
     <link rel="stylesheet" href="/public/assets/css/weui.pagehd.css" />
     <script type="text/javascript" src="/public/assets/js/jquery-1.10.2.min.js"></script>
-</head>
 
+</head>
 
 
 <body>
 
-    <div class="page">
+   {include file="public/back" /}
 
-        <div class="page__hd">
-            <h1 class="page__title">菜单列表</h1>
-            <p class="page__desc">点击编辑可以修改名称</p>
-        </div>
+    <div class="page">
 
         <div class="weui-cells__title">菜单列表</div>
         <div class="weui-cells">
 
             {foreach name="data" item="vo"}
-                <a class="weui-cell weui-cell_access" href="javascript:;">
-                    <div class="weui-cell__bd">
-                        <p>{$vo.menu_name}</p>
-                    </div>
-                    <div class="weui-cell__ft" style="color:blue;">编辑</div>
-                </a>
+            <a class="weui-cell weui-cell_access" href="javascript:;">
+                <div class="weui-cell__bd">
+                    <p>{$vo.menu_name}</p>
+                </div>
+                <div class="weui-cell__ft" style="color:blue;">编辑</div>
+            </a>
 
-                {foreach name="$vo.goods_list" item="v"}
-                <a class="weui-cell weui-cell_access" href="javascript:;">
-                    <div class="weui-cell__bd">
-                        <p style="padding-left:20px;">{$v.goods_name}</p>
-                    </div>
-                    <div class="weui-cell__ft"></div>
-                </a>
-                {/foreach}
+            {foreach name="$vo.goods_list" item="v"}
+            <a class="weui-cell weui-cell_access" href="javascript:;">
+                <div class="weui-cell__bd">
+                    <p style="padding-left:20px;">{$v.goods_name}</p>
+                </div>
+                <div class="weui-cell__ft"></div>
+            </a>
+            {/foreach}
 
             {/foreach}
 

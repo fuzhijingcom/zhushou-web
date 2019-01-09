@@ -16,19 +16,16 @@
 
     <div class="page">
 
-        <div class="page__hd">
-            <h1 class="page__title">增加商品</h1>
-            <p class="page__desc">编写商品基本信息</p>
-        </div>
+        {include file="public/back" /}
 
         <form method="POST">
-           
+
             <div class="weui-cells__title">增加商品基本信息</div>
             <div class="weui-cells weui-cells_form">
                 <div class="weui-cell">
                     <div class="weui-cell__hd"><label class="weui-label">商品名称</label></div>
                     <div class="weui-cell__bd">
-                        <input class="weui-input" type="text" placeholder="请输入商品名称" name="goods_name"  />
+                        <input class="weui-input" type="text" placeholder="请输入商品名称" name="goods_name" />
                     </div>
                 </div>
             </div>
@@ -46,7 +43,7 @@
                 <div class="weui-cell">
                     <div class="weui-cell__hd"><label class="weui-label">包装费</label></div>
                     <div class="weui-cell__bd">
-                        <input class="weui-input" type="text" placeholder="请输入包装费" name="packing_fee"  />
+                        <input class="weui-input" type="text" placeholder="请输入包装费" name="packing_fee" />
                     </div>
                 </div>
             </div>
@@ -56,7 +53,7 @@
                 <div class="weui-cell">
                     <div class="weui-cell__bd">
                         <textarea class="weui-textarea" placeholder="请输入介绍文本" rows="3" name="detail"></textarea>
-                      
+
                     </div>
                 </div>
             </div>

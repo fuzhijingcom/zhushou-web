@@ -12,9 +12,7 @@
 
 <body>
 
-    <div>
-        <!-- 浮动返回 -->
-    </div>
+    {include file="public/back" /}
 
 
     <div class="page">
@@ -29,21 +27,22 @@
                 <div class="weui-panel__hd">商品列表</div>
                 <div class="weui-panel__bd">
                     {foreach name="data" item="vo"}
-                    <a href="javascript:void(0);" class="weui-media-box weui-media-box_appmsg">
-                        <div class="weui-media-box__hd">
-                            <img class="weui-media-box__thumb" src="{$vo.pic_url}"
-                                alt="">
+                    <div style="border:1px solid #ccc;margin-bottom:5px;">
+                        <a href="javascript:void(0);" class="weui-media-box weui-media-box_appmsg">
+                            <div class="weui-media-box__hd">
+                                <img class="weui-media-box__thumb" src="{$vo.pic_url}" alt="">
+                            </div>
+                            <div class="weui-media-box__bd">
+                                <h4 class="weui-media-box__title">{$vo.goods_name}</h4>
+                                <p class="weui-media-box__desc">{$vo.detail}</p>
+                            </div>
+                        </a>
+                        <div class="weui-panel__ft">
+                            <a href="/index.php/shop/goods/edit?goods_id={$vo.goods_id}" class="weui-cell weui-cell_access weui-cell_link">
+                                <div class="weui-cell__bd">售价￥{$vo.price}，包装费￥{$vo.packing_fee}，库存{$vo.stock}</div>
+                                <span class="weui-cell__ft">编辑?</span>
+                            </a>
                         </div>
-                        <div class="weui-media-box__bd">
-                            <h4 class="weui-media-box__title">{$vo.goods_name}</h4>
-                            <p class="weui-media-box__desc">{$vo.detail}</p>
-                        </div>
-                    </a>
-                    <div class="weui-panel__ft">
-                        <a href="/index.php/shop/goods/edit?goods_id={$vo.goods_id}" class="weui-cell weui-cell_access weui-cell_link">
-                            <div class="weui-cell__bd">售价￥{$vo.price}，包装费￥{$vo.packing_fee}，库存{$vo.stock}</div>
-                            <span class="weui-cell__ft">编辑?</span>
-                        </a>    
                     </div>
                     {/foreach}
                 </div>
