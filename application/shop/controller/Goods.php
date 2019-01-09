@@ -46,6 +46,37 @@ class Goods extends Controller
      */
     public function edit(){
         
+
+        if($this->request->method() == "POST"){
+
+            $goods_id = input('goods_id');
+
+            $goods_name = input('goods_name');
+            $price=input('price');
+            $packing_fee=input('packing_fee');
+            $sales=input('sales');
+            $stock=input('stock');
+            $detail=input('detail');
+    
+            $url = CONFIG('api5_url')."school/admin/goods_edit?goods_id=".$goods_id."&goods_name=".$goods_name."&price=".$price."&packing_fee=".$packing_fee."&sales=".$sales."&stock=".$stock."&detail=".$detail;
+            $res = httpRequest($url,'GET');
+          
+            $res = json_decode($res,true);
+           
+            if(!$res){
+                $this->error('请求出错');
+            }
+          
+            if($res['status'] == 1){
+                $this->success($res['msg'],'index');
+            }else{
+                $this->error($res['msg']);
+            }
+
+            exit;
+
+        }
+
         $goods_id = input('goods_id');
 
         $url = CONFIG('api5_url')."school/admin/goods_detail?goods_id=".$goods_id;
@@ -68,41 +99,12 @@ class Goods extends Controller
     }
 
     /**
-     * 编辑 post
-     */
-    public function edit_post(){
-        $goods_id = input('goods_id');
-
-        $goods_name = input('goods_name');
-        $price=input('price');
-        $packing_fee=input('packing_fee');
-        $sales=input('sales');
-        $stock=input('stock');
-        $detail=input('detail');
-
-        $url = CONFIG('api5_url')."school/admin/goods_edit?goods_id=".$goods_id."&goods_name=".$goods_name."&price=".$price."&packing_fee=".$packing_fee."&sales=".$sales."&stock=".$stock."&detail=".$detail;
-        $res = httpRequest($url,'GET');
-      
-        $res = json_decode($res,true);
-       
-        if(!$res){
-            $this->error('请求出错');
-        }
-      
-        if($res['status'] == 1){
-            $this->success($res['msg'],'index');
-        }else{
-            $this->error($res['msg']);
-        }
-    }
-
-    /**
      * 增加商品
      */
     public function add(){
 
 
-        if($this->request()->method == "POST"){
+        if($this->request->method() == "POST"){
 
             $seller_id = session("seller_id");
             $goods_name = input('goods_name');
